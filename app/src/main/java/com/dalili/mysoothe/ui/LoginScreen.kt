@@ -8,6 +8,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dalili.mysoothe.R
@@ -46,11 +47,17 @@ fun LoginScreen() {
 
 @Composable
 private fun CallToSignUp() {
-    Text(
-        text = "Don't have an account? Sign up",
-        style = MaterialTheme.typography.body1,
-        modifier = Modifier.paddingFromBaseline(32.dp)
-    )
+    Row(modifier = Modifier.paddingFromBaseline(32.dp)) {
+        Text(
+            text = "Don't have an account?",
+            style = MaterialTheme.typography.body1,
+        )
+        Spacer(modifier = Modifier.width(2.dp))
+        Text(
+            text = "Sign up",
+            style = MaterialTheme.typography.body1.copy(textDecoration = TextDecoration.Underline)
+        )
+    }
 }
 
 @Composable

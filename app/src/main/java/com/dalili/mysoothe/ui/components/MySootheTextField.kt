@@ -11,11 +11,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun MySootheTextField(value: String, onValueChange: (String) -> Unit = {}, label: String = "") {
+fun MySootheTextField(
+    value: String,
+    onValueChange: (String) -> Unit = {},
+    label: String = "",
+    leadingIcon: (@Composable () -> Unit)? = null
+) {
     TextField(
         value = value,
         label = { Text(label) },
         onValueChange = onValueChange,
+        leadingIcon = leadingIcon,
         modifier = Modifier
             .fillMaxWidth()
             .height(56.dp),
